@@ -17,8 +17,8 @@ import kotlin.math.pow
 
 @State(Scope.Benchmark)
 open class MatrixDotBenchmark {
-//    @Param("100x1000", "100x5000", "100x10000", "1000x100", "5000x100", "10000x100", "1000x5000", "1000x10000", "5000x1000", "10000x1000")
-    @Param("100x100", "500x500", "1000x1000", "5000x5000", "10000x10000")
+    @Param("100x1000", "100x5000", "100x10000", "1000x100", "5000x100", "10000x100", "1000x5000", "1000x10000", "5000x1000", "10000x1000")
+//    @Param("100x100", "500x500", "1000x1000", "5000x5000", "10000x10000")
     var shapeStr: String = ""
 
     lateinit var s: MathMatrixStructures
