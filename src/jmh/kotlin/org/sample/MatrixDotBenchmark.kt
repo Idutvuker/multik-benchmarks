@@ -1,24 +1,17 @@
 package org.sample
 
 import jcuda.runtime.JCuda
-import org.jetbrains.kotlinx.multik.api.Multik
-import org.jetbrains.kotlinx.multik.api.ndarray
 import org.jetbrains.kotlinx.multik.cuda.CudaEngine
-import org.jetbrains.kotlinx.multik.cuda.getGpuMemInfo
 import org.jetbrains.kotlinx.multik.cuda.linalg.CudaLinAlgEx
 import org.jetbrains.kotlinx.multik.jni.linalg.NativeLinAlgEx
-import org.jetbrains.kotlinx.multik.ndarray.data.NDArray
 import org.jetbrains.kotlinx.multik.ndarray.data.get
-import org.nd4j.linalg.api.ndarray.INDArray
-import org.nd4j.linalg.factory.Nd4j
 import org.openjdk.jmh.annotations.*
 import org.openjdk.jmh.infra.Blackhole
-import kotlin.math.pow
 
 @State(Scope.Benchmark)
 open class MatrixDotBenchmark {
-    @Param("100x1000", "100x5000", "100x10000", "1000x100", "5000x100", "10000x100", "1000x5000", "1000x10000", "5000x1000", "10000x1000")
-//    @Param("100x100", "500x500", "1000x1000", "5000x5000", "10000x10000")
+//    @Param("100x1000", "100x5000", "100x10000", "1000x100", "5000x100", "10000x100", "1000x5000", "1000x10000", "5000x1000", "10000x1000")
+    @Param("100x100", "500x500", "1000x1000", "5000x5000", "10000x10000")
     var shapeStr: String = ""
 
     lateinit var s: MathMatrixStructures
