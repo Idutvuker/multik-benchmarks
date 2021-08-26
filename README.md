@@ -1,2 +1,27 @@
-![SquareMatrixMultiplication](results/SquareMatrixMultiplication.png)
-![RectangularMatrixMultiplication](results/RectangularMatrixMultiplication.png)
+# Multik Cuda Benchmarks
+The purporse of these becnhamrs is to compare performance of multik-cuda with other implementations (mainly multik-native).
+
+Benchmars are done via JMH toolkit.
+
+## Specs
+| Spec | Value                               |
+|------|-------------------------------------|
+| CPU  | Intel Core i7-8750H @ 2.20GHz       |
+| GPU  | GP107M [GeForce GTX 1050 Ti Mobile] |
+| OS   | Ubuntu 20.04.2 LTS                  |
+
+## Plots
+Legend:
+* `multikCuda` - dot using Cuda module with cudaDeviceSynchronize call right after  
+* `multikCudaCTH` - dot using Cuda module with copy to host triggered right after
+* `multikCuda` - dot using Native module
+* `Nd4j` - nd4j mmul using CUDA backend
+
+
+![SquareMatrixMultiplication](results/SquareFloatMatrixMultiplication.png)
+
+![RectangularMatrixMultiplication](results/RectangularFloatMatrixMultiplication.png)
+
+## Note
+
+`multikCuda` and `multikCTH` benchmark methods are using memory optimizations while Nd4j is executed without any optimizations (as far as I'm aware). Nd4j is shown here just for reference of a solid CUDA implementation.
