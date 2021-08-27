@@ -1,5 +1,5 @@
 # Multik Cuda Benchmarks
-The purporse of these becnhamrs is to compare performance of multik-cuda with other implementations (mainly multik-native).
+The purporse of these becnhamarks is to compare performance of multik-cuda with other implementations (mainly multik-native).
 
 Benchmars are done via JMH toolkit.
 
