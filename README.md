@@ -1,5 +1,5 @@
 # Multik Cuda Benchmarks
-The purporse of these becnhamarks is to compare performance of multik-cuda with other implementations (mainly multik-native).
+The purporse of these becnhamarks is to compare performance of multik-cuda with other implementations (mainly Multik Native).
 
 Benchmars are done via JMH toolkit.
 
@@ -11,13 +11,13 @@ Benchmars are done via JMH toolkit.
 | OS   | Ubuntu 20.04.2 LTS                  |
 
 ## Plots
-Legend:
+#### Legend:
 * `multikCuda` - dot using Cuda module with cudaDeviceSynchronize call right after  
 * `multikCudaCTH` - dot using Cuda module with copy to host triggered right after
 * `multikNative` - dot using Native module, which uses OpenBLAS under the hood
 * `Nd4j` - nd4j mmul using CUDA backend
 
-
+#### Y axis shows Relative Speedup compared to Multik Native implementation.
 ![SquareMatrixMultiplication](results/SquareFloatMatrixMultiplication.png)
 
 ![RectangularMatrixMultiplication](results/RectangularFloatMatrixMultiplication.png)
